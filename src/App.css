@@ -1,38 +1,19 @@
-.App {
-  max-width: 600px;
-  margin: 30px auto;
-  text-align: center;
-  font-family: Arial, sans-serif;
-}
-
-.product-grid {
+.navbar {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
-  margin: 20px 0;
-}
-
-.card {
-  border: 1px solid #ccc;
-  padding: 15px;
-  width: 180px;
-  border-radius: 6px;
-  background: #f9f9f9;
-}
-
-button {
-  padding: 6px 12px;
-  margin-top: 8px;
-  background-color: #2ecc71;
+  justify-content: space-between;
+  align-items: center;
+  background: #001f3f;
+  padding: 1rem;
   color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
-input {
-  margin: 6px;
-  padding: 8px;
-  width: 140px;
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
 }

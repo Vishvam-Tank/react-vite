@@ -1,46 +1,27 @@
-import { useState } from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import Products from './pages/Products';
+import Cart from './pages/Cart';
 import './App.css';
 
-import Header from './components/Header';
-import ProductCard from './components/ProductCard';
-import ProductForm from './components/ProductForm';
-
 function App() {
-  const [products, setProducts] = useState([
-    { id: 1, name: 'T-shirt', price: 799 },
-    { id: 2, name: 'Watch', price: 4999 },
-    { id: 3, name: 'Bag', price: 1999 },
-  ]);
-
-  const addProduct = (product) => {
-    setProducts([...products, product]);
-  };
-
-  const removeProduct = (id) => {
-    setProducts(products.filter(p => p.id !== id));
-  };
-
   return (
-    <div className="App">
-      <Header title="React Component Practice" />
+    <BrowserRouter>
+      <nav className="navbar">
+        <h1>React Practice</h1>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/products">Products</Link></li>
+          <li><Link to="/cart">Cart</Link></li>
+        </ul>
+      </nav>
 
-      {products.length === 0 ? (
-        <p>No products left.</p>
-      ) : (
-        <div className="product-grid">
-          {products.map((p) => (
-            <ProductCard
-              key={p.id}
-              name={p.name}
-              price={p.price}
-              onRemove={() => removeProduct(p.id)}
-            />
-          ))}
-        </div>
-      )}
-
-      <ProductForm onAdd={addProduct} />
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
