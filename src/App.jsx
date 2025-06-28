@@ -3,6 +3,8 @@ import Home from './pages/Home';
 import Products from './pages/Products';
 import Cart from './pages/Cart';
 import './App.css';
+import Header from './components/Header';
+
 
 function App() {
   return (
